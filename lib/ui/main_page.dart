@@ -42,16 +42,17 @@ class _MainPageState extends State<MainPage> {
             padding: const EdgeInsets.only(left: 10),
             child: Row(
               children: [
-                Text("Transactions History", style:
-                    GoogleFonts.roboto(fontSize: 18, color: Colors.white), maxLines: 1),
-                Expanded(child: Container(
+                Expanded(child: Text("Transactions History", style:
+                    GoogleFonts.roboto(fontSize: 18, color: Colors.white), maxLines: 1)
+                ),
+                if (!_showHeader)
+                Container(
                   margin: const EdgeInsets.only(right: 10),
                   alignment: Alignment.centerRight,
                   child: buttonOutline("Show", (){
                     _showHeader = true;
                     setState((){});
                   })),
-                ),
               ],
             )),
         _transactionHistory(),
